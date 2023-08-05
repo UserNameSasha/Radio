@@ -237,11 +237,11 @@ public class RadioTest {
     @Test
     public void testNextVolumeHighBorder() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
 
         radio.nextVolume();
 
-        int expected = 11;
+        int expected = 0;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
