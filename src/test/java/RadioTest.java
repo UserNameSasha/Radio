@@ -224,11 +224,11 @@ public class RadioTest {
     @Test
     public void testNextVolumeBeforeHighBorder() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(9);
+        radio.setCurrentVolume(99);
 
         radio.nextVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -241,7 +241,7 @@ public class RadioTest {
 
         radio.nextVolume();
 
-        int expected = 10;
+        int expected = 11;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -277,11 +277,11 @@ public class RadioTest {
     @Test
     public void testPrevVolumeMiddle() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(50);
 
         radio.prevVolume();
 
-        int expected = 4;
+        int expected = 49;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -290,11 +290,11 @@ public class RadioTest {
     @Test
     public void testPrevVolumeHighBorder() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
 
         radio.prevVolume();
 
-        int expected = 9;
+        int expected = 99;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
