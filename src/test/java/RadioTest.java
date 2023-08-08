@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
+    // тест средней радиостанции в установленных пределах (от 0 до 9)
     @Test
     public void testMiddleStation() {
         Radio radio = new Radio();
@@ -14,6 +15,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест минилальной радиостанции
     @Test
     public void testMinStation() {
         Radio radio = new Radio();
@@ -25,6 +27,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест максимальной радиостанции
     @Test
     public void testMaxStation() {
         Radio radio = new Radio();
@@ -36,6 +39,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест граничных значений
     @Test
     public void testBeforeMaxStation() {
         Radio radio = new Radio();
@@ -48,7 +52,7 @@ public class RadioTest {
     }
 
     @Test
-    public void testAfterMaxStation() {
+    public void testNext() {
         Radio radio = new Radio();
         radio.setCurrentStation(10);
 
@@ -115,6 +119,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест переключения радиостанций
     @Test
     public void testNextStationUntilHightBorder() {
         Radio radio = new Radio();
@@ -128,6 +133,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест переключения радтостанции с максимальной сразу на минимальную
     @Test
     public void testNextStationHightBorder() {
         Radio radio = new Radio();
@@ -141,6 +147,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест переключения радтостанции с минимальной на следующую по возврастанию
     @Test
     public void testNextStationLowBorder() {
         Radio radio = new Radio();
@@ -154,8 +161,9 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест переключения радтостанции с минимальной сразу на максимальную
     @Test
-    public void testPrevStationLowBorder() {
+    public void testPrew() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
 
@@ -167,8 +175,9 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    // тест переключения раиостанциии от максимальной к следующей минимальной
     @Test
-    public void testPrevStationHightBorder() {
+    public void testPrevDown() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
 
@@ -180,33 +189,10 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void testPrevStationMiddle() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(6);
-
-        radio.prevStation();
-
-        int expected = 5;
-        int actual = radio.getCurrentStation();
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testPrevStationBeforeLowBorder() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(1);
-
-        radio.prevStation();
-
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-
-        Assertions.assertEquals(expected, actual);
-    }
 
 // громкость
+
+// переключение громкости
 
     @Test
     public void testNextVolume() {
@@ -247,6 +233,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+// тест граничных значений громкости
 
     @Test
     public void testPrevVolumeBeforeLow() {

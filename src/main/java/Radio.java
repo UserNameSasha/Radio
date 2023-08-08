@@ -62,7 +62,8 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 100) {
+
+        if   (currentVolume > 100) {
             return;
         }
         this.currentVolume = currentVolume;
