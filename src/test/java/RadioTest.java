@@ -52,7 +52,7 @@ public class RadioTest {
     }
 
     @Test
-    public void testNext() {
+    public void testAfterMaxStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(10);
 
@@ -107,7 +107,7 @@ public class RadioTest {
     }
 
     @Test
-    public void testNextStation() {
+    public void testNext() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
 
@@ -121,7 +121,7 @@ public class RadioTest {
 
     // тест переключения радиостанций
     @Test
-    public void testNextStationUntilHightBorder() {
+    public void testNextStationHightBorder() {
         Radio radio = new Radio();
         radio.setCurrentStation(8);
 
@@ -135,7 +135,7 @@ public class RadioTest {
 
     // тест переключения радтостанции с максимальной сразу на минимальную
     @Test
-    public void testNextStationHightBorder() {
+    public void testNextStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
 
@@ -163,7 +163,7 @@ public class RadioTest {
 
     // тест переключения радтостанции с минимальной сразу на максимальную
     @Test
-    public void testPrew() {
+    public void testPrewStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
 
@@ -177,7 +177,7 @@ public class RadioTest {
 
     // тест переключения раиостанциии от максимальной к следующей минимальной
     @Test
-    public void testPrevDown() {
+    public void testPrevStationDown() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
 
