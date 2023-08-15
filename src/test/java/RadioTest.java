@@ -326,4 +326,57 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-}
+//Новый тесты:
+
+    //Следующая станция после МАХ
+    @Test
+    public void NewRadioNextStatiomMax() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(9);
+
+        radio.nextStation();
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    //Предыдущая станция после MIN
+    @Test
+    public void NewRadioNextStationMin() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(0);
+
+        radio.prevStation();
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    //Тест уровень звука после MAX значения
+    @Test
+    public void upVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(100);
+        int expected = 100;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    //Тест уровень звука после MIN значения
+    @Test
+    public void downVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(0);
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    }
+
+
+
+
